@@ -1,0 +1,141 @@
+{
+    "version": 2,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 21,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "flags",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_CXX_FLAGS": "/permissive- /Zc:preprocessor /EHsc /MP /W4 -DWIN32_LEAN_AND_MEAN -DNOMINMAX -DUNICODE -D_UNICODE"
+            }
+        },
+        {
+            "name": "vcpkg",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+                "VCPKG_TARGET_TRIPLET": "x64-windows-static-md",
+                "VCPKG_OVERLAY_TRIPLETS": "${sourceDir}/cmake",
+                "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+            }
+        },
+        {
+            "name": "x64",
+            "hidden": true,
+            "architecture": {
+                "value": "x64",
+                "strategy": "external"
+            }
+        },
+        {
+            "name": "msvc",
+            "hidden": true,
+            "generator": "Visual Studio 17 2022",
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "intelliSenseMode": "windows-msvc-x64",
+                    "enableMicrosoftCodeAnalysis": true,
+                    "enableClangTidyCodeAnalysis": true
+                }
+            }
+        },
+        {
+            "name": "mod-deploy",
+            "hidden": true,
+            "cacheVariables": {
+                "DEPLOY_MOD": {
+                    "type": "BOOL",
+                    "value": "ON"
+                },
+                "DEPLOY_ROOT": {
+                    "type": "STRING",
+                    "value": "$env{SKYRIM_MODS_DEPLOY_ROOT}"
+                }
+            }
+        },
+        {
+            "name": "base-configuration",
+            "hidden": true,
+            "inherits": [
+                "flags",
+                "vcpkg",
+                "x64",
+                "msvc"
+            ]
+        },
+        {
+            "name": "debug-configuration",
+            "inherits": [
+                "base-configuration"
+            ],
+            "displayName": "Debug",
+            "description": "Debug build",
+            "binaryDir": "${sourceDir}/build/Debug",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": {
+                    "type": "STRING",
+                    "value": "Debug"
+                }
+            }
+        },
+        {
+            "name": "debug-configuration-deploy",
+            "inherits": [
+                "debug-configuration",
+                "mod-deploy"
+            ],
+            "displayName": "Debug + Deploy",
+            "description": "Debug and copy .dll and mod resources to SKYRIM_MODS"
+        },
+        {
+            "name": "release-configuration",
+            "inherits": [
+                "base-configuration"
+            ],
+            "displayName": "Release",
+            "description": "Release build",
+            "binaryDir": "${sourceDir}/build/Release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": {
+                    "type": "STRING",
+                    "value": "Release"
+                }
+            }
+        },
+        {
+            "name": "release-configuration-deploy",
+            "inherits": [
+                "release-configuration",
+                "mod-deploy"
+            ],
+            "displayName": "Release + Deploy",
+            "description": "Release and copy .dll and mod resources to SKYRIM_MODS"
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "build-debug",
+            "displayName": "Debug",
+            "configurePreset": "debug-configuration"
+        },
+        {
+            "name": "build-debug-deploy",
+            "displayName": "Debug Deploy",
+            "configurePreset": "debug-configuration-deploy"
+        },
+        {
+            "name": "build-release",
+            "displayName": "Release",
+            "configurePreset": "release-configuration"
+        },
+        {
+            "name": "build-release-deploy",
+            "displayName": "Release Deploy",
+            "configurePreset": "release-configuration-deploy"
+        }
+    ]
+}
