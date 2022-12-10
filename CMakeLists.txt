@@ -7,7 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Set <DEPLOY_ROOT> to set the path of a mod to deploy files to.
 # The SKSE plugin files will be writen to <DEPLOY_ROOT>/<PROJECT_NAME>/SKSE/Plugins
 set(DEPLOY_ROOT "C:/some/path/to/mod/path")
-set(DEPLOY_ROOT "C:/Users/mrowr/Dropbox/Skyrim Scripting/Projects/MO2 Mods Deploy Folder/")
 
 set(SOURCE_FILES plugin.cpp)
 find_package(CommonLibSSE CONFIG REQUIRED)
