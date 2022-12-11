@@ -16,24 +16,22 @@
             }
         },
         {
-            "name": "debugPreset",
+            "name": "debug",
             "inherits": ["basePreset"],
             "displayName": "Debug",
-            "description": "Debug",
             "binaryDir": "${sourceDir}/build/Debug",
             "cacheVariables": { "CMAKE_BUILD_TYPE": { "type": "STRING", "value": "Debug" } }
         },
         {
-            "name": "releasePreset",
+            "name": "release",
             "inherits": ["basePreset"],
             "displayName": "Release",
-            "description": "Release",
             "binaryDir": "${sourceDir}/build/Release",
             "cacheVariables": { "CMAKE_BUILD_TYPE": { "type": "STRING", "value": "Release" } }
         }
     ],
     "buildPresets": [
-        { "name": "debugBuildPreset", "displayName": "Debug", "configurePreset": "debugPreset" },
-        { "name": "buildReleasePreset", "displayName": "Release", "configurePreset": "releasePreset" }
+        { "name": "debug-buildPreset", "configurePreset": "debug" },
+        { "name": "release-buildPreset", "configurePreset": "release" }
     ]
 }
