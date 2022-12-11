@@ -47,4 +47,4 @@ If you'd like to know more about open source licenses, see:
 
 **If you use this template, PLEASE release your project as a public open source project.** 💖
 
-**DO NOT RELEASE YOUR SKSE PLUGIN ON NEXUS/LOVERSLAB/ETC WITHOUT MAKING THE SOURCE FREELY AVAILABLE ONLINE** 💖
+**PLEASE DO NOT RELEASE YOUR SKSE PLUGIN ON NEXUS/ETC WITHOUT MAKING THE SOURCE CODE AVAILABLE ONLINE** 💖
