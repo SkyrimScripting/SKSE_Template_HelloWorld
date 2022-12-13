@@ -1,3 +1,5 @@
+> 📜 other templates available at https://github.com/SkyrimScripting/SKSE_Templates
+
 # SKSE "Hello, world!"
 
 The simplest possible SKSE plugin for Skyrim using:
