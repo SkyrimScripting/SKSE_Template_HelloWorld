@@ -11,7 +11,7 @@ The simplest possible SKSE plugin for Skyrim using:
 
 > Because this uses CommonLibSSE NG, it supports Skyrim SSE, AE, GOG, and VR!
 
-### What does it do?
+## What does it do?
 
 After running Skyrim, once at the Main Menu, press the `~` key to open the game console.
 
