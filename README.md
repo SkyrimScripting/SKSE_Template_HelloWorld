@@ -32,9 +32,17 @@ You may need to click `OK` on a few windows, but the project should automaticall
 
 It will _automatically_ download [CommonLibSSE NG](https://github.com/CharmedBaryon/CommonLibSSE-NG) and everything you need to get started making your new plugin!
 
-### Setup:
+### Project setup
 
-After downloading, please:
+By default, when this project compiles it will output a `.dll` for your SKSE plugin into the `build/` folder.
+
+But you probably want to put the `.dll` into your Skyrim mods folder, e.g. the mods folder used by Mod Organizer 2 or Vortex.
+
+You can configure this project to _automatically_ output the SKSE plugin `.dll` into `<your mods folder>\<name you give this project\SKSE\Plugins\<your mod>.dll` if you set the `SKYRIM_MODS_FOLDER` environment variable to the **root of your mods folder** (i.e. `<your mods folder>`)
+
+### Setup your own repository
+
+If you clone this template on GitHub, please:
 
 - Go into `LICENSE` and change the year and change `<YOUR NAME HERE>` to your name.
 - Go into `CODE_OF_CONDUCT.md` and change `<YOUR CONTACT INFO HERE>` to your contact information.
