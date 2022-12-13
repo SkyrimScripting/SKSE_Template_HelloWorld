@@ -40,6 +40,9 @@ But you probably want to put the `.dll` into your Skyrim mods folder, e.g. the m
 
 You can configure this project to _automatically_ output the SKSE plugin `.dll` into `<your mods folder>\<name you give this project\SKSE\Plugins\<your mod>.dll` if you set the `SKYRIM_MODS_FOLDER` environment variable to the **root of your mods folder** (i.e. `<your mods folder>`)
 
+  - Name: `SKYRIM_MODS_FOLDER`  
+    Value: `C:\path\to\wherever\your\Skyrim\mods\are`
+
 ## Setup your own repository
 
 If you clone this template on GitHub, please:
