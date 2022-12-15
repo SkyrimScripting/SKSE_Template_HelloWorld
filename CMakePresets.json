@@ -1,13 +1,15 @@
 {
-    "version": 2,
-    "cmakeMinimumRequired": { "major": 3, "minor": 21, "patch": 0 },
+    "version": 3,
     "configurePresets": [
         {
-            "name": "basePreset",
+            "name": "base",
             "hidden": true,
-            "generator": "Visual Studio 17 2022",
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "installDir": "${sourceDir}/install/${presetName}",
             "architecture": { "value": "x64", "strategy": "external" },
             "cacheVariables": {
+                "CMAKE_C_COMPILER": "cl.exe",
                 "CMAKE_CXX_FLAGS": "/permissive- /Zc:preprocessor /EHsc /MP /W4 -DWIN32_LEAN_AND_MEAN -DNOMINMAX -DUNICODE -D_UNICODE",
                 "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
                 "VCPKG_TARGET_TRIPLET": "x64-windows-static-md",
@@ -17,21 +19,15 @@
         },
         {
             "name": "debug",
-            "inherits": ["basePreset"],
+            "inherits": ["base"],
             "displayName": "Debug",
-            "binaryDir": "${sourceDir}/build/Debug",
-            "cacheVariables": { "CMAKE_BUILD_TYPE": { "type": "STRING", "value": "Debug" } }
+            "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
         },
         {
             "name": "release",
-            "inherits": ["basePreset"],
+            "inherits": ["base"],
             "displayName": "Release",
-            "binaryDir": "${sourceDir}/build/Release",
-            "cacheVariables": { "CMAKE_BUILD_TYPE": { "type": "STRING", "value": "Release" } }
+            "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
         }
-    ],
-    "buildPresets": [
-        { "name": "debug-buildPreset", "configurePreset": "debug", "displayName": "Debug" },
-        { "name": "release-buildPreset", "configurePreset": "release", "displayName": "Release" }
     ]
 }
