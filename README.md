@@ -2,6 +2,14 @@
 
 # SKSE "Hello, world!"
 
+- [SKSE "Hello, world!"](#skse-hello-world)
+  - [What does it do?](#what-does-it-do)
+  - [Requirements](#requirements)
+  - [Project setup](#project-setup)
+  - [Setup your own repository](#setup-your-own-repository)
+
+---
+
 The simplest possible SKSE plugin for Skyrim using:
 
 - C++
