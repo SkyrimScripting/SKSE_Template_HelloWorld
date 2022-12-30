@@ -35,6 +35,8 @@ You will see that we printed `"Hello, world!"` to the console at the Main Menu ð
     - Name: `VCPKG_ROOT`  
       Value: `C:\path\to\wherever\your\vcpkg\folder\is`
 
+<img src="https://raw.githubusercontent.com/SkyrimScripting/Resources/main/Screenshots/Setting%20Environment%20Variables/VCPKG_ROOT.png" height="150">
+
 Once you have Visual Studio 2022 installed, you can open this folder in basically any C++ editor, e.g. [VS Code](https://code.visualstudio.com/) or [CLion](https://www.jetbrains.com/clion/) or [Visual Studio](https://visualstudio.microsoft.com/)
 - > _for VS Code, if you are not automatically prompted to install the [C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) and [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) extensions, please install those and then close VS Code and then open this project as a folder in VS Code_
 
@@ -46,15 +48,23 @@ It will _automatically_ download [CommonLibSSE NG](https://github.com/CharmedBar
 
 By default, when this project compiles it will output a `.dll` for your SKSE plugin into the `build/` folder.
 
-But you probably want to put the `.dll` into your Skyrim mods folder, e.g. the mods folder used by Mod Organizer 2 or Vortex.
+If you want to configure this project to output your plugin files
+into your Skyrim Special Edition's "`Data`" folder:
 
-You can configure this project to _automatically_ output the SKSE plugin `.dll` into:
-- `<your mods folder>\<name you give this project>\SKSE\Plugins\<your mod>.dll`  
-  if you set the `SKYRIM_MODS_FOLDER` environment variable to the **root of your mods folder** (i.e. `<your mods folder>`)
+- Set the `SKYRIM_FOLDER` environment variable to the path of your Skyrim installation  
+  e.g. `C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition`
 
-- **Example:**
-    - Name: `SKYRIM_MODS_FOLDER`  
-      Value: `C:\path\to\wherever\your\Skyrim\mods\are`
+<img src="https://raw.githubusercontent.com/SkyrimScripting/Resources/main/Screenshots/Setting%20Environment%20Variables/SKYRIM_FOLDER.png" height="150">
+
+If you want to configure this project to output your plugin files
+into your "`mods`" folder:  
+(_for Mod Organizer 2 or Vortex_)
+
+- Set the `SKYRIM_MODS_FOLDER` environment variable to the path of your mods folder:  
+  e.g. `C:\Users\<user>\AppData\Local\ModOrganizer\Skyrim Special Edition\mods`  
+  e.g. `C:\Users\<user>\AppData\Roaming\Vortex\skyrimse\mods`
+
+<img src="https://raw.githubusercontent.com/SkyrimScripting/Resources/main/Screenshots/Setting%20Environment%20Variables/SKYRIM_MODS_FOLDER.png" height="150">
 
 ## Setup your own repository
 
