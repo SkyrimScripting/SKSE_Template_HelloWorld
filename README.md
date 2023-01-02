@@ -28,6 +28,7 @@ You will see that we printed `"Hello, world!"` to the console at the Main Menu ð
 ## Requirements
 
 - [Visual Studio 2022](https://visualstudio.microsoft.com/) (_the free Community edition is fine!_)
+- [CMake](https://cmake.org/download/) 3.25.1+ (_please install the Latest Release_)
 - [`vcpkg`](https://github.com/microsoft/vcpkg)
   - 1. Clone the repository using git OR [download it as a .zip](https://github.com/microsoft/vcpkg/archive/refs/heads/master.zip)
   - 2. Go into the `vcpkg` folder and double-click on `bootstrap-vcpkg.bat`
