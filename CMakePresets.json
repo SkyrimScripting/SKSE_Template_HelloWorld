@@ -12,7 +12,7 @@
                 "CMAKE_CXX_COMPILER": "cl.exe",
                 "CMAKE_CXX_FLAGS": "/permissive- /Zc:preprocessor /EHsc /MP /W4 -DWIN32_LEAN_AND_MEAN -DNOMINMAX -DUNICODE -D_UNICODE",
                 "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
-                "VCPKG_TARGET_TRIPLET": "x64-windows-static-md",
+                "VCPKG_TARGET_TRIPLET": "x64-windows-static",
                 "VCPKG_OVERLAY_TRIPLETS": "${sourceDir}/cmake",
                 "CMAKE_MSVC_RUNTIME_LIBRARY": "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
